@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hrms_db
+    username: postgres
+    password: sillicon
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    properties:
+      hibernate:
+        id:
+          new_generator_mappings: false
+        jdbc:
+          lob:
+            ddl-non_contextual_creation: true # When you launch the application for the first time - switch "none" at "create"
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        ddl-auto: none
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+  servlet:
+    multipart:
+      max-file-size: 90MB
+      max-request-size: 90MB
+
+app:
+  jwt:
+    secret: ThisIsYourSuperSecretKeyThatShouldBeAtLeast256BitsLong
+    expiration: 86400000
