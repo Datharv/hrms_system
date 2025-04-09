@@ -22,7 +22,6 @@ spring:
       max-file-size: 90MB
       max-request-size: 90MB
 
-app:
-  jwt:
-    secret: ThisIsYourSuperSecretKeyThatShouldBeAtLeast256BitsLong
-    expiration: 86400000
+jwt:
+  secret: ThisIsYourSuperSecretKeyThatShouldBeAtLeast256BitsLong
+  expiration: 86400000
